@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { BrowserRouter, Route, Router, Routes } from 'react-router-dom'
+import AddFriend from './components/AddFriend'
+import SearchFriend from './components/SearchFriend'
+import ViewFriend from './components/ViewFriend'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+        <div>
+     <BrowserRouter>
+     <Routes>
+      <Route>
+      <Route  path ='/' element={<AddFriend/>}/>
+      <Route  path ='/search' element={<SearchFriend/>}/>
+      <Route  path ='/viewfriend' element={<ViewFriend/>}/>
+      </Route>
+     </Routes>
+     </BrowserRouter>
+    </div>
+  
+  )
 }
 
-export default App;
+export default App
